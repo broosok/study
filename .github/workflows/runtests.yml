@@ -50,6 +50,9 @@ jobs:
         if: "github.event.inputs.deployment_target == 'second_tests'"
         run: pytest ./tests/test_like_a_button_page.py -v --alluredir=allure-results
 
+      - name: Generate allure report
+        run: allure generate allure-results -o _site --clean
+
       - name: Store allure results
         uses: actions/upload-artifact@v4
         with: 
