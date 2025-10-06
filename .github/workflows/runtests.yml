@@ -38,11 +38,11 @@ jobs:
 
       - name: first_tests
         if: "github.event.inputs.deployment_target == 'first_tests'"
-        run: pytest ./tests/test_button_page.py --alluredir=allure_results
+        run: pytest ./tests/test_button_page.py --alluredir=allure-results
 
       - name: second_tests
         if: "github.event.inputs.deployment_target == 'second_tests'"
-        run: pytest ./tests/test_like_a_button_page.py --alluredir=allure_results
+        run: pytest ./tests/test_like_a_button_page.py --alluredir=allure-results
 
       - name: Store allure results
         uses: actions/upload-artifact@v4
@@ -66,7 +66,7 @@ jobs:
       - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
       
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
       
       - run: allure generate -c allure-results -o _site
 
@@ -85,7 +85,7 @@ jobs:
     steps:
         
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v2
