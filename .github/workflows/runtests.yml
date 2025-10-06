@@ -45,7 +45,7 @@ jobs:
         run: pytest ./tests/test_like_a_button_page.py --alluredir=allure_results
 
       - name: Store allure results
-        uses: actuions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with: 
           name: allure-results
           path:
