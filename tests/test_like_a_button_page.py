@@ -1,6 +1,4 @@
-import pytest
 from selenium.webdriver.common.by import By
-from selenium import webdriver
 
 def test_button2_exist(browser):
     browser.get('https://www.qa-practice.com/elements/button/like_a_button')
