@@ -12,6 +12,12 @@ on:
           - first_tests
           - second_tests
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+
 jobs:
   test:
     runs-on: ubuntu-latest
