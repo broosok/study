@@ -99,7 +99,7 @@ jobs:
         uses: actions/download-artifact@v5
         with:
           name: _site
-          path: ./
+          path: _site
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3.0.1
