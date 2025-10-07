@@ -91,9 +91,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: generate-report
     name: Report publication
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Download generated report
         uses: actions/download-artifact@v5
