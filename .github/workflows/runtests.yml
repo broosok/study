@@ -44,14 +44,14 @@ jobs:
           https://api.github.com/repos/broosok/study/actions/artifacts/$ARTIFACT_ID/zip
           -o artifacts.zip
 
-      - run: mkdir allure-results && unzip artifacts.zip -d allure-results
+      - run: mkdir allure-results && unzip artifacts.zip -d allure-results-old
 
       - name: Store allure results
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
+          name: allure-results-old
           path:
-            allure-results
+            allure-results-old
           retention-days: 1
 
   test:
@@ -82,8 +82,8 @@ jobs:
       - name: Download allure results
         uses: actions/download-artifact@v4
         with:
-          name: allure-results
-          path: allure-results
+          name: allure-results-old
+          path: allure-results-old
 
       - name: first_tests
         if: "github.event.inputs.deployment_target == 'first_tests'"
@@ -96,9 +96,9 @@ jobs:
       - name: Store allure results
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
+          name: allure-results-new
           path:
-            allure-results
+            allure-results-new
           retention-days: 1
 
   generate-report:
@@ -117,10 +117,10 @@ jobs:
       - name: Download allure results
         uses: actions/download-artifact@v4
         with:
-          name: allure-results
-          path: allure-results
+          name: allure-results-new
+          path: allure-results-new
 
-      - run: allure generate allure-results -o _site --clean
+      - run: allure generate allure-results-new -o _site --clean
 
       - name: Store generated report
         uses: actions/upload-artifact@v4
