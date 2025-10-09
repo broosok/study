@@ -83,7 +83,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: allure-results-old
-          path: allure-results-old
+          path: allure-results
 
       - name: first_tests
         if: "github.event.inputs.deployment_target == 'first_tests'"
