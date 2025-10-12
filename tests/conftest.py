@@ -6,6 +6,6 @@ from selenium import webdriver
 def browser():
     options = Options()
     options.add_argument('--headless')
-    chrome_browser = webdriver.Chrome(options=options)
-    chrome_browser.implicitly_wait(10)
-    return chrome_browser
+    firefox_browser = webdriver.Firefox(options=options)
+    firefox_browser.implicitly_wait(10)
+    return firefox_browser
