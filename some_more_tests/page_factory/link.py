@@ -1,5 +1,4 @@
 import allure
-from fontTools.subset.svg import href_local_target
 
 from some_more_tests.page_factory.component_base import Component
 

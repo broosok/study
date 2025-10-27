@@ -1,6 +1,6 @@
 from playwright.sync_api import Page
 
-
+from some_more_tests.components.searchmodal import SearchModal
 from some_more_tests.page_factory.button import Button
 from some_more_tests.page_factory.link import Link
 

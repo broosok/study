@@ -1,12 +1,12 @@
 import allure
 from playwright.sync_api import Page, Response
 
-from components.navigation.navbar import Navbar
+from some_more_tests.components.navbar import Navbar
 
 class BasePage:
     def __init__(self, page: Page) -> None:
         self.page = page
-        self.navigation = Navbar(Page)
+        self.navigation = Navbar(page)
 
     def visit(self, url: str) -> Response | None:
         with allure.step(f"Opening the url: {url}"):

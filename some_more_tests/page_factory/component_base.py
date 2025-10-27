@@ -32,6 +32,6 @@ class Component(ABC):
     def should_have_text(self, text: str, **kwargs) -> None:
         with allure.step(f"Checking {self.type_of} have text {text}"):
             locator = self.get_locator(**kwargs)
-            expect(locator).contains_text(text)
+            expect(locator).to_contain_text(text)
 
     
