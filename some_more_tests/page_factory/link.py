@@ -8,9 +8,4 @@ class Link(Component):
     def type_of(self) -> str:
         return "link"
 
-    # def click(self, **kwargs) -> None:
-    #     with allure.step(f"Clicking the {self.type_of} {self.name}"):
-    #         locator = self.get_locator(**kwargs)
-    #         locator.click()
-
     

@@ -34,4 +34,9 @@ class Component(ABC):
             locator = self.get_locator(**kwargs)
             expect(locator).to_contain_text(text)
 
+    def should_have_attribute(self, text: str, **kwargs) -> None:
+        with allure.step(f"Checking {self.type_of} have attribute {text}"):
+            locator = self.get_locator(**kwargs)
+            expect(locator).to_have_attribute(text)
+
     
