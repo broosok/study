@@ -14,5 +14,5 @@ class DropdownMenu:
 
         self.select_locator = DropdownElement(page, locator="//select[@id='dropdown']", name="Dropdown")
 
-    def open_dropdown(self, option):
-        self.select_locator.select_option(option, validate_value=True)
+    def open_dropdown(self, option: str):
+        self.select_locator.select_option(option=option, validate_value=True)

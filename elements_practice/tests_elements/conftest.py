@@ -2,6 +2,8 @@ import pytest
 from playwright.sync_api import Browser, Page, sync_playwright
 
 from elements_practice.components.dropdown_menu import DropdownPage
+from elements_practice.components.link_list import LinkPage
+
 
 @pytest.fixture(scope="function")
 def chromium_page():
@@ -12,3 +14,7 @@ def chromium_page():
 @pytest.fixture(scope="function")
 def dropdown_page(chromium_page: Page) -> DropdownPage:
     return DropdownPage(chromium_page)
+
+@pytest.fixture(scope="function")
+def linklist_page(chromium_page: Page) -> LinkPage:
+    return LinkPage(chromium_page)
