@@ -15,5 +15,4 @@ class LinkList:
         self.link_locator = Link(page, locator='//a[@href="download/{file_name}"]', name="Link")
 
     def download(self, file_name: str) -> None:
-        print(f"Downloading file: {file_name}, type: {type(file_name)}")
         self.link_locator.click(file_name=file_name)

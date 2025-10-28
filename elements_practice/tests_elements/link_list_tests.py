@@ -1,5 +1,3 @@
-from fileinput import filename
-
 import pytest
 
 from elements_practice.components.link_list import LinkPage
