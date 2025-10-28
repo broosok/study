@@ -2,6 +2,7 @@ import pytest
 from playwright.sync_api import Page, sync_playwright
 
 from elements_practice.components.dropdown_menu import DropdownPage
+from elements_practice.components.dynamic_loading import DynamicLoadingPage
 from elements_practice.components.file_uploader import UploaderPage
 from elements_practice.components.link_list import LinkPage
 
@@ -23,3 +24,7 @@ def linklist_page(chromium_page: Page) -> LinkPage:
 @pytest.fixture(scope="function")
 def uploader_page(chromium_page: Page) -> UploaderPage:
     return UploaderPage(chromium_page)
+
+@pytest.fixture(scope="function")
+def dynamic_page(chromium_page: Page) -> DynamicLoadingPage:
+    return DynamicLoadingPage(chromium_page)
