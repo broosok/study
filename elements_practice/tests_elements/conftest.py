@@ -5,7 +5,7 @@ from elements_practice.components.dropdown_menu import DropdownPage
 from elements_practice.components.dynamic_loading import DynamicLoadingPage
 from elements_practice.components.file_uploader import UploaderPage
 from elements_practice.components.link_list import LinkPage
-
+from elements_practice.components.add_remove_component import AddRemovePage
 
 @pytest.fixture(scope="function")
 def chromium_page():
@@ -28,3 +28,7 @@ def uploader_page(chromium_page: Page) -> UploaderPage:
 @pytest.fixture(scope="function")
 def dynamic_page(chromium_page: Page) -> DynamicLoadingPage:
     return DynamicLoadingPage(chromium_page)
+
+@pytest.fixture(scope="function")
+def add_remove_page(chromium_page: Page) -> AddRemovePage:
+    return AddRemovePage(chromium_page)
